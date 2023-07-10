@@ -1,0 +1,110 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background: #26A69A;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  #message {
+    width: 80vw;
+    height: 30vh;
+    display: block;
+    border-radius: 2vw;
+    resize: none;
+    padding: 2vh 2vw;
+    font-size: 4vh;
+    outline: none;
+    color: #263238;
+    border: 1vw solid #00BFA5;
+  }
+
+  #speak-btn {
+    display: block;
+    margin: 5px auto 0;
+    width: 13vh;
+    height: 13vh;
+    border-radius: 50%;
+    background: #81C784;
+    border: none;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
+    font-size: 10vh;
+    cursor: pointer;
+    position: relative;
+  }
+
+  #speak-btn.active {
+    background: #00C853;
+    animation: 1s wave infinite alternate;
+  }
+
+  #speak-btn:not(.active):after {
+    content: '';
+    height: 75%;
+    width: 1vh;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .mic {
+    position: relative;
+    display: inline-block;
+    background: #FFF;
+    width: 3vh;
+    height: 5vh;
+    border-radius: 3vh;
+    margin-bottom: 2vh;
+  }
+
+  .mic:after {
+    content: '';
+    width: 4vh;
+    height: 4vh;
+    display: block;
+    border: 0.75vh solid;
+    border-color: transparent #fff #fff transparent;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -80%) rotate(45deg);
+  }
+
+  .mic:before {
+    content: '';
+    background: #FFF;
+    height: 2vh;
+    width: 1vh;
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    transform: translateX(-50%);
+  }
+  .footer {
+    background-color: #f5f5f5;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .footer p {
+    text-align: left;
+    color: #f6efef;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  @keyframes wave {
+    0% {
+      box-shadow: 0 0 1vh 0 rgba(255, 238, 88, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 2vh 2vh rgba(255, 238, 88, 0.1);
+    }
+  }
